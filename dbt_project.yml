@@ -48,6 +48,6 @@ models:
       +schema: ANALYTICS
     core:
       materialized: table
-      +schama: CORE
+      +schema: CORE
 
     
