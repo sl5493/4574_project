@@ -1,0 +1,6 @@
+sources:
+  - name: google_drive
+    database: LOAD
+    schema: GOOGLE_DRIVE
+    tables:
+     - name: HR_JOINS
