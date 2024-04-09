@@ -4,3 +4,4 @@ sources:
     schema: GOOGLE_DRIVE
     tables:
      - name: HR_JOINS
+     - name: EXPENSES
