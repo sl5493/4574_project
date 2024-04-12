@@ -5,3 +5,6 @@ sources:
     tables:
      - name: HR_JOINS
      - name: EXPENSES
+     - name: HR_QUITS
+     - name: RETURNS
+     
