@@ -7,4 +7,12 @@ sources:
      - name: EXPENSES
      - name: HR_QUITS
      - name: RETURNS
-     
+
+  - name: snowflake
+    database: LOAD
+    schema: SNOWFLAKE_DB_WEB_WEB_SCHEMA
+    tables:
+     - name: ITEM_VIEWS
+     - name: ORDERS
+     - name: PAGE_VIEWS
+     - name: SESSIONS
