@@ -1,3 +1,8 @@
+WITH ranking AS(
+    SELECT *,
+        ROW_NUMBER() OVER (PARTITION BY SESSION_ID ORDER BY VIEW_AT DESC) as row_n
+    FROM {{ source("snowflake", "PAGE_VIEWS") }}
+)
 SELECT
     page_name,
     session_id,
@@ -5,4 +10,5 @@ SELECT
     _fivetran_deleted,
     _fivetran_id,
     _fivetran_synced as _fivetran_synced_ts
-FROM {{ source("snowflake", "PAGE_VIEWS") }}
+FROM ranking
+WHERE row_n = 1

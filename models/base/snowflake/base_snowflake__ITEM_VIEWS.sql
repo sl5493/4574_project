@@ -1,3 +1,8 @@
+WITH ranking AS(
+    SELECT *,
+        ROW_NUMBER() OVER (PARTITION BY SESSION_ID ORDER BY ITEM_VIEW_AT DESC) as row_n
+    FROM {{source('snowflake', 'ITEM_VIEWS')}}
+)
 SELECT 
     _FIVETRAN_ID,
     ADD_TO_CART_QUANTITY,
@@ -8,4 +13,5 @@ SELECT
     PRICE_PER_UNIT,
     _FIVETRAN_DELETED,
     _FIVETRAN_SYNCED AS _FIVETRAN_SYNCED_TS
-FROM {{source('snowflake', 'ITEM_VIEWS')}}
+FROM ranking
+WHERE row_n = 1

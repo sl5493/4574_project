@@ -1,3 +1,8 @@
+WITH ranking AS(
+    SELECT *,
+        ROW_NUMBER() OVER (PARTITION BY SESSION_ID ORDER BY SESSION_AT DESC) as row_n
+    FROM {{source('snowflake', 'SESSIONS')}}
+)
 SELECT  
     CLIENT_ID,
     IP,
@@ -7,4 +12,5 @@ SELECT
     _FIVETRAN_DELETED,
     _FIVETRAN_ID,
     _FIVETRAN_SYNCED AS _FIVETRAN_SYNCED_TS
-FROM {{source('snowflake', 'SESSIONS')}}
+FROM ranking
+WHERE row_n = 1

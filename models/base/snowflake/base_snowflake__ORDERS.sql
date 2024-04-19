@@ -1,3 +1,9 @@
+WITH ranking AS(
+    SELECT *,
+        ROW_NUMBER() OVER (PARTITION BY ORDER_ID ORDER BY ORDER_AT DESC) as row_n
+    FROM {{source('snowflake', 'ORDERS')}} 
+)
+
 SELECT
     _FIVETRAN_ID,
     SHIPPING_ADDRESS,
@@ -13,4 +19,5 @@ SELECT
     PAYMENT_INFO,
     _FIVETRAN_DELETED,
     _FIVETRAN_SYNCED AS _FIVETRAN_SYNCED_TS
-FROM {{source('snowflake', 'ORDERS')}}
+FROM ranking
+WHERE row_n = 1
