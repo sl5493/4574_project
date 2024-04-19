@@ -45,7 +45,7 @@ raw_client AS (
 SELECT client_id, client_name, phone, shipping_address, state, payment_info,
             first_order_ts, last_order_ts, first_session_ts, last_session_ts,
             session_count, viewed_item_count, item_views,
-           order_count, net_order_count, total_price_paid, total_amount_of_orders
+           order_count, net_order_count, total_price_paid, total_amount_of_orders,
            net_amount_of_orders
 FROM raw_client
 WHERE rnk = 1
