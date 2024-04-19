@@ -37,6 +37,9 @@ models:
         description: The total number of non-refunded orders a clients placed
       - name: total_price_paid
         description: The total value of items a client purchased (excluding tax, shipping cost)
+      - name: total_amount_of_orders
+        description: The total amount of orders for a client(including tax, shipping cost and refunded orders)
       - name: net_amount_of_orders
         description: The total amount of non-refunded orders for a client (including tax, shipping cost, excluding refunds)
+    
 
