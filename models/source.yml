@@ -1,0 +1,75 @@
+sources:
+  - name: google_drive
+    database: LOAD
+    schema: GOOGLE_DRIVE
+    tables:
+     - name: HR_JOINS
+       freshness: 
+         warn_after:
+            count: 1
+            period: day
+         error_after:
+            count: 2
+            period: day
+     - name: EXPENSES
+       freshness: 
+         warn_after:
+           count: 1
+           period: day
+         error_after:
+           count: 2
+           period: day
+
+     - name: HR_QUITS
+       freshness: 
+         warn_after:
+            count: 1
+            period: day
+         error_after:
+            count: 2
+            period: day
+     - name: RETURNS
+       freshness: 
+         warn_after:
+            count: 1
+            period: day
+         error_after:
+            count: 2
+            period: day
+
+  - name: snowflake
+    database: LOAD
+    schema: SNOWFLAKE_DB_WEB_WEB_SCHEMA
+    tables:
+     - name: ITEM_VIEWS
+       freshness: 
+         warn_after:
+            count: 1
+            period: day
+         error_after:
+            count: 2
+            period: day
+     - name: ORDERS
+       freshness: 
+         warn_after:
+            count: 1
+            period: day
+         error_after:
+            count: 2
+            period: day
+     - name: PAGE_VIEWS
+       freshness: 
+         warn_after:
+            count: 1
+            period: day
+         error_after:
+            count: 2
+            period: day
+     - name: SESSIONS
+       freshness: 
+         warn_after:
+            count: 1
+            period: day
+         error_after:
+            count: 2
+            period: day
