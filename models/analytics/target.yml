@@ -43,3 +43,44 @@ models:
         description: The total amount of non-refunded orders for a client (including tax, shipping cost, excluding refunds)
     
 
+  - name: fact_order
+    description: The detailed table showing information for orders. One row per order.
+    columns:
+      - name: order_id
+        description: The unique id assigned to each order
+        tests:
+          - unique
+          - not_null
+      - name: order_date
+        description: The order dates for the orders
+      - name: session_id
+        description: The session id in which the orders were placed
+      - name: shipping_address
+        description: The shipping address of the orders
+      - name: state
+        description: The state of the orders
+      - name: phone
+        description: The phone number of clients who placed the orders
+      - name: payment_method
+        description: The payment method of the orders (Ex, paypal/google_pay)
+      - name: payment_info
+        description: The payment information of the orders
+      - name: client_name
+        description: The representation of clients
+      - name: number_products
+        description: Total number of products in the orders
+      - name: tax_rate
+        description: The tax rate of the orders
+      - name: shipping_cost_usd
+        description: The shipping cost of the orders with USD
+      - name: price_paid
+        description: The total amount paid for the products excludes the tax and shipping cost
+      - name: total_paid
+        description: The total amount paid by the clients for the products include tax and shipping cost
+      - name: returned_date
+        description: the return date if an order is returned by the clients
+      - name: is_refunded
+        description: If an order is returned, then the column indicates whether it is refuned or not (True/false)
+
+    
+
