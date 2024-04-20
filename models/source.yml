@@ -4,15 +4,84 @@ sources:
     schema: GOOGLE_DRIVE
     tables:
      - name: HR_JOINS
+<<<<<<< HEAD
      - name: EXPENSES
      - name: HR_QUITS
      - name: RETURNS
+=======
+       freshness: 
+         warn_after:
+            count: 1
+            period: day
+         error_after:
+            count: 2
+            period: day
+     - name: EXPENSES
+       freshness: 
+         warn_after:
+           count: 1
+           period: day
+         error_after:
+           count: 2
+           period: day
+
+     - name: HR_QUITS
+       freshness: 
+         warn_after:
+            count: 1
+            period: day
+         error_after:
+            count: 2
+            period: day
+     - name: RETURNS
+       freshness: 
+         warn_after:
+            count: 1
+            period: day
+         error_after:
+            count: 2
+            period: day
+>>>>>>> eff70dd3bc40a6b05c34626d27dda944120f191e
 
   - name: snowflake
     database: LOAD
     schema: SNOWFLAKE_DB_WEB_WEB_SCHEMA
     tables:
      - name: ITEM_VIEWS
+<<<<<<< HEAD
      - name: ORDERS
      - name: PAGE_VIEWS
      - name: SESSIONS
+=======
+       freshness: 
+         warn_after:
+            count: 1
+            period: day
+         error_after:
+            count: 2
+            period: day
+     - name: ORDERS
+       freshness: 
+         warn_after:
+            count: 1
+            period: day
+         error_after:
+            count: 2
+            period: day
+     - name: PAGE_VIEWS
+       freshness: 
+         warn_after:
+            count: 1
+            period: day
+         error_after:
+            count: 2
+            period: day
+     - name: SESSIONS
+       freshness: 
+         warn_after:
+            count: 1
+            period: day
+         error_after:
+            count: 2
+            period: day
+>>>>>>> eff70dd3bc40a6b05c34626d27dda944120f191e
