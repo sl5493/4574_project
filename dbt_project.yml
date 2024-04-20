@@ -46,8 +46,3 @@ models:
     analytics:
       materialized: table
       +schema: ANALYTICS
-    core:
-      materialized: table
-      +schema: CORE
-
-    
