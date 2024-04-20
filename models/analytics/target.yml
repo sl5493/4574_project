@@ -41,6 +41,34 @@ models:
         description: The total amount of orders for a client(including tax, shipping cost and refunded orders)
       - name: net_amount_of_orders
         description: The total amount of non-refunded orders for a client (including tax, shipping cost, excluding refunds)
+
+
+
+
+  - name: dim_employee
+    description: The employee dimenion table. This includes both existing employees and employees that already quit. One row per employee
+    columns:
+      - name: employee_id
+        description: The unique id assigned to each employee
+        tests:
+          - unique
+          - not_null
+      - name: employee_name
+        description: The encrypted name of an employee (if he/she quit or not)
+      - name: city
+        description: The city where an employee works in (if he/she quit or not)
+      - name: address
+        description: The encrypted address of an employee (if he/she quit or not)
+      - name: title
+        description: The title of an employee (if he/she quit or not)
+      - name: hire_date
+        description: The date when an employee being hired (if he/she quit or not)
+      - name: quit_date
+        description: The date when an employee quits (if he/she quit or not)
+      - name: annual_salary
+        description: The annual salary that an employee gets (if he/she quit or not)
+
+
     
   - name: dim_items
     description: The item dimenion table. This includes all itemss that ever had a order on our websire. One row per item. 
@@ -71,4 +99,5 @@ models:
         description: Total revenue for this item
       - name: AVERAGE_PRICE_PER_UNIT
         description: Average item price since variates price for the same item due to item size
+
 
