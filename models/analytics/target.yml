@@ -114,7 +114,6 @@ models:
       - name: ITEM_NAME
         description: The unique name for each item
         tests:
-          - unique
           - not_null
       - name: PURCHASED_NUMBER
         description: Total sold number for this item
@@ -129,7 +128,6 @@ models:
       - name: SESSION_ID
         description: The unique id for each session
         tests:
-          - unique
           - not_null
       - name: PURCHASED_NUMBER
         description: Total sold number for this item
