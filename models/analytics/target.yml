@@ -129,15 +129,26 @@ models:
         description: The unique id for each session
         tests:
           - not_null
-      - name: PURCHASED_NUMBER
-        description: Total sold number for this item
-      - name: TOTAL_SOLD_PRICES
-        description: Total revenue for this item
-      - name: AVERAGE_PRICE_PER_UNIT
-        description: Average item price since variates price for the same item due to item size
-
-
-
+      - name: OS
+        description: Clent's oepration system type for this session
+      - name: SESSION_AT_TS
+        description: session start time
+      - name: SHOP_PLANTS
+        description: SHOP_PLANTS page viewed count for this session
+      - name: PLANT_CARE
+        description: PLANT_CARE page viewed count for this session
+      - name: ITEM_VIEWED
+        description: Item viewed count for this session
+      - name: LANDING_PAGE
+        description: LANDING_PAGE page viewed count for this session
+      - name: CART
+        description: CART page viewed count for this session
+      - name: NUMBER_PAGE_VIEWED
+        description: NUMBER of page viewed count for this session
+      - name: CART
+        description: CART page viewed count for this session
+      - name: Order_exists
+        description: if order exists for this session will be 1 else 0
 
 
 
