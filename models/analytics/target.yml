@@ -41,5 +41,43 @@ models:
         description: The total amount of orders for a client(including tax, shipping cost and refunded orders)
       - name: net_amount_of_orders
         description: The total amount of non-refunded orders for a client (including tax, shipping cost, excluding refunds)
-    
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  - name: daily_finances
+    description: The table summarizing revenue and costs at the daily level
+    columns:
+      - name: date
+        description: The date when the revenue and cost produced
+      - name: total_revenue
+        description: The revenue received on that day, including price paid by clients, taxes paid by clients.
+      - name: total_refund
+        description: The refund on that day (if client ever requests a refund)
+      - name: total_expenses
+        description: The cost on that day including all types of expenses
+      - name: net_profit
+        description: The net profit on that day, calcuating by total_revenue - total_refund - total_expenses
