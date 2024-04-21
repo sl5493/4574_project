@@ -1,3 +1,4 @@
+
 models:
   - name: dim_clients
     description: The client dimenion table. This includes all clients that ever had a session on our websire. One row per client. 
@@ -164,4 +165,4 @@ models:
       - name: total_expenses
         description: The cost on that day including all types of expenses
       - name: net_profit
-        description: The net profit on that day, calcuating by total_revenue - total_refund - total_expenses
+        description: The net profit on that day, calcuating by total_revenue - total_refund - total_expenses 
