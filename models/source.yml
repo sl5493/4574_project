@@ -9,7 +9,7 @@ sources:
             count: 1
             period: day
          error_after:
-            count: 2
+            count: 3
             period: day
      - name: EXPENSES
        freshness: 
@@ -17,7 +17,7 @@ sources:
            count: 1
            period: day
          error_after:
-           count: 2
+           count: 3
            period: day
 
      - name: HR_QUITS
@@ -26,7 +26,7 @@ sources:
             count: 1
             period: day
          error_after:
-            count: 2
+            count: 3
             period: day
      - name: RETURNS
        freshness: 
@@ -34,7 +34,7 @@ sources:
             count: 1
             period: day
          error_after:
-            count: 2
+            count: 3
             period: day
 
   - name: snowflake
@@ -47,7 +47,7 @@ sources:
             count: 1
             period: day
          error_after:
-            count: 2
+            count: 3
             period: day
      - name: ORDERS
        freshness: 
@@ -55,7 +55,7 @@ sources:
             count: 1
             period: day
          error_after:
-            count: 2
+            count: 3
             period: day
      - name: PAGE_VIEWS
        freshness: 
@@ -63,7 +63,7 @@ sources:
             count: 1
             period: day
          error_after:
-            count: 2
+            count: 3
             period: day
      - name: SESSIONS
        freshness: 
@@ -71,5 +71,5 @@ sources:
             count: 1
             period: day
          error_after:
-            count: 2
+            count: 3
             period: day
