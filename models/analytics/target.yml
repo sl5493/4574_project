@@ -10,23 +10,23 @@ models:
           - unique
           - not_null
       - name: client_name
-        description: The encrypted name of a client (if he/she ever placed an order)
+        description: The encrypted name of a client if he/she ever placed an order.
       - name: phone
-        description: The encrypted latest phone number of a client (if he/she ever placed an order)
+        description: The encrypted latest phone number of a client if he/she ever placed an order
       - name: shipping_address
-        description: The encrypted latest shipping address of a client (if he/she ever placed an order)
+        description: The encrypted latest shipping address of a client if he ever placed an order
       - name: state
-        description: The state in a client's latest shipping address (if he/she ever placed an order)
+        description: The state in a client's latest shipping address if he ever placed an order
       - name: payment_info
-        description: The encrypted payment_info of a client (if he/she ever placed an order)
+        description: The encrypted payment_info of a client if he ever placed an order
       - name: first_order_ts
-        description: The first timestamp when a client placed an order.
+        description: The first timestamp when a client placed an order
       - name: last_order_ts
-        description: The latest timestamp when a client placed an order. 
+        description: The latest timestamp when a client placed an order
       - name: first_session_ts
-        description: The first timestamp when a client opened a session.
+        description: The first timestamp when a client opened a session
       - name: last_order_ts
-        description: The latest timestamp when a client opened a session.
+        description: The latest timestamp when a client opened a session
       - name: session_count
         description: The total number of sessions a client has
       - name: viewed_item_count
@@ -38,14 +38,14 @@ models:
       - name: net_order_count
         description: The total number of non-refunded orders a clients placed
       - name: total_price_paid
-        description: The total value of items a client purchased (excluding tax, shipping cost)
+        description: The total value of items a client purchased excluding tax and shipping cost
       - name: total_amount_of_orders
-        description: The total amount of orders for a client(including tax, shipping cost and refunded orders)
+        description: The total amount of orders for a client including tax and shipping cost and refunded orders
       - name: net_amount_of_orders
-        description: The total amount of non-refunded orders for a client (including tax, shipping cost, excluding refunds)
+        description: The total amount of non-refunded orders for a client including tax and shipping cost excluding refunds
 
   - name: fact_order
-    description: The detailed table showing information for orders. One row per order.
+    description: The detailed table showing information for orders. One row per order
     columns:
       - name: order_id
         description: The unique id assigned to each order
@@ -83,8 +83,6 @@ models:
       - name: is_refunded
         description: If an order is returned, then the column indicates whether it is refuned or not (True/false)
 
-    
-
   - name: dim_employee
     description: The employee dimenion table. This includes both existing employees and employees that already quit. One row per employee
     columns:
@@ -94,21 +92,19 @@ models:
           - unique
           - not_null
       - name: employee_name
-        description: The encrypted name of an employee (if he/she quit or not)
+        description: The encrypted name of an employee if he quit or not
       - name: city
-        description: The city where an employee works in (if he/she quit or not)
+        description: The city where an employee works in if he quit or not
       - name: address
-        description: The encrypted address of an employee (if he/she quit or not)
+        description: The encrypted address of an employee if he quit or not
       - name: title
-        description: The title of an employee (if he/she quit or not)
+        description: The title of an employee if he quit or not
       - name: hire_date
-        description: The date when an employee being hired (if he/she quit or not)
+        description: The date when an employee being hired if he quit or not
       - name: quit_date
-        description: The date when an employee quits (if he/she quit or not)
+        description: The date when an employee quits if he quit or not
       - name: annual_salary
-        description: The annual salary that an employee gets (if he/she quit or not)
-
-
+        description: The annual salary that an employee gets if he quit or not
     
   - name: dim_items
     description: The item dimenion table. This includes all itemss that ever had a order on our websire. One row per item. 
@@ -146,14 +142,12 @@ models:
         description: LANDING_PAGE page viewed count for this session
       - name: cart
         description: CART page viewed count for this session
+      - name: faq
+        description: FAQ page viewed count for this session
       - name: number_page_viewed
         description: NUMBER of page viewed count for this session
-      - name: cart
-        description: CART page viewed count for this session
       - name: order_exists
         description: if order exists for this session will be 1 else 0
-
-
 
   - name: daily_finances
     description: The table summarizing revenue and costs at the daily level
