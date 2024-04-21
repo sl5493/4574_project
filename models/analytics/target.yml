@@ -25,7 +25,7 @@ models:
         description: The latest timestamp when a client placed an order
       - name: first_session_ts
         description: The first timestamp when a client opened a session
-      - name: last_order_ts
+      - name: last_session_ts
         description: The latest timestamp when a client opened a session
       - name: session_count
         description: The total number of sessions a client has
