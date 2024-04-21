@@ -113,43 +113,44 @@ models:
   - name: dim_items
     description: The item dimenion table. This includes all itemss that ever had a order on our websire. One row per item. 
     columns:
-      - name: ITEM_NAME
+      - name: item_name
         description: The unique name for each item
         tests:
           - not_null
-      - name: PURCHASED_NUMBER
+      - name: purchased_number
         description: Total sold number for this item
-      - name: TOTAL_SOLD_PRICES
+      - name: total_sold_prices
         description: Total revenue for this item
-      - name: AVERAGE_PRICE_PER_UNIT
+      - name: average_price_per_unit
         description: Average item price since variates price for the same item due to item size
 
   - name: fact_sessions
     description: The session fact table. This includes all session on our websire. One row per sessions. 
     columns:
-      - name: SESSION_ID
+      - name: session_id
         description: The unique id for each session
         tests:
           - not_null
-      - name: OS
+          - unique
+      - name: os
         description: Clent's oepration system type for this session
-      - name: SESSION_AT_TS
+      - name: session_at_ts
         description: session start time
-      - name: SHOP_PLANTS
+      - name: shop_plants
         description: SHOP_PLANTS page viewed count for this session
-      - name: PLANT_CARE
+      - name: plant_care
         description: PLANT_CARE page viewed count for this session
-      - name: ITEM_VIEWED
+      - name: item_viewed
         description: Item viewed count for this session
-      - name: LANDING_PAGE
+      - name: landing_page
         description: LANDING_PAGE page viewed count for this session
-      - name: CART
+      - name: cart
         description: CART page viewed count for this session
-      - name: NUMBER_PAGE_VIEWED
+      - name: number_page_viewed
         description: NUMBER of page viewed count for this session
-      - name: CART
+      - name: cart
         description: CART page viewed count for this session
-      - name: Order_exists
+      - name: order_exists
         description: if order exists for this session will be 1 else 0
 
 
@@ -161,7 +162,7 @@ models:
         description: The date when the revenue and cost produced
       - name: total_revenue
         description: The revenue received on that day, including price paid by clients, taxes paid by clients.
-      - name: total_refund
+      - name: total_refunds
         description: The refund on that day (if client ever requests a refund)
       - name: total_expenses
         description: The cost on that day including all types of expenses
