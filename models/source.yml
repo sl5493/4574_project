@@ -11,6 +11,7 @@ sources:
           error_after:
             count: 3
             period: day
+        loaded_at_field: _fivetran_synced
       - name: EXPENSES
         freshness: 
           warn_after:
@@ -19,7 +20,7 @@ sources:
           error_after:
             count: 3
             period: day
-
+        loaded_at_field: _fivetran_synced  
       - name: HR_QUITS
         freshness: 
           warn_after:
@@ -28,6 +29,7 @@ sources:
           error_after:
               count: 3
               period: day
+        loaded_at_field: _fivetran_synced
       - name: RETURNS
         freshness: 
           warn_after:
@@ -36,6 +38,7 @@ sources:
           error_after:
               count: 3
               period: day
+        loaded_at_field: _fivetran_synced
 
   - name: snowflake
     database: LOAD
@@ -49,6 +52,7 @@ sources:
           error_after:
               count: 3
               period: day
+        loaded_at_field: _fivetran_synced
       - name: ORDERS
         freshness: 
           warn_after:
@@ -57,6 +61,7 @@ sources:
           error_after:
               count: 3
               period: day
+        loaded_at_field: _fivetran_synced
       - name: PAGE_VIEWS
         freshness: 
           warn_after:
@@ -65,6 +70,7 @@ sources:
           error_after:
               count: 3
               period: day
+        loaded_at_field: _fivetran_synced
       - name: SESSIONS
         freshness: 
           warn_after:
@@ -73,3 +79,4 @@ sources:
           error_after:
               count: 3
               period: day
+        loaded_at_field: _fivetran_synced
