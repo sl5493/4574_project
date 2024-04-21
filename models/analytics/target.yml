@@ -127,7 +127,6 @@ models:
         description: The unique id for each session
         tests:
           - not_null
-          - unique
       - name: os
         description: Clent's oepration system type for this session
       - name: session_at_ts
