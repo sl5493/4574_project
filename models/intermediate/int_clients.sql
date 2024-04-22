@@ -36,8 +36,8 @@ raw_client AS (
         --only keep the latest client info
         ROW_NUMBER() over(partition by s.client_id order by (CASE WHEN order_at_ts IS NOT NULL THEN order_at_ts ELSE '1900-01-01 00:00:00.000' END) DESC) as rnk
     FROM clean_sessions s 
+        LEFT JOIN {{ref ('base_snowflake__ITEM_VIEWS')}} v  ON s.session_id = v.session_id 
         LEFT JOIN  clean_orders o ON s.session_id = o.session_id
-        LEFT JOIN {{ref ('base_snowflake__ITEM_VIEWS')}} v  ON o.session_id = v.session_id 
         LEFT JOIN clean_returns r ON o.order_id = r.order_id
 )
 
